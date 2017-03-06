@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<section>
+		<div class="ui two column centered grid">
+			<div class="column">
+				<div class="ui form">
+					<form action="" method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						{% for field in form %}
+							<div class="field centered">
+								{{ field }}
+							</div>
+						{% endfor %}
+						<button type="submit" class="positive ui button">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="ui two column centered grid">
+			Upload a text file.
+		</div>
+		{% if cards %}
+			<div class="ui centered grid">
+				<table class="ui celled structured table">
+					<thead>
+						<tr>
+							<th >Credit card number</th>
+							<th >Validation</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for card in cards %}
+							<tr>
+								<td >{{ card.number }}</th>
+								<td >{{ card.is_valid_number }}</th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}
+
+	</section>
+{% endblock content %}
