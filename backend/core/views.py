@@ -8,7 +8,7 @@ from .models import CreditCardNumber
 class IndexView(generic.FormView):
 
     template_name = 'core/index.html'
-    title = 'Home'
+    title = 'Validate Credit Card'
     success_url = reverse_lazy('core:index')
     form_class = CrediCardNumberForm
 
