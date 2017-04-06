@@ -1,4 +1,4 @@
 setup:
 	pip install -r requirements.txt
-	bower install --allow-root
-	./manage.py migrate
+	yarn install --modules-folder frontend/
+	python manage.py migrate

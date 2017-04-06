@@ -9,7 +9,7 @@ __pycache__/
 .directory
 
 # Front-end assets and media
-/frontend/bower_components
+/frontend/node_modules
 /node_modules
 /_public
 /_media
